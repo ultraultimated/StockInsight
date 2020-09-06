@@ -1,4 +1,4 @@
-from model import build_model
+from models import build_model
 from preprocess import transform_data
 import os
 import tensorflow as tf
@@ -8,7 +8,7 @@ Xtrain, ytrain = transform_data(DATA_PATH)
 
 md = build_model()
 
-checkpoint_path = MODEL_PATH+"cp.ckpt"
+checkpoint_path = MODEL_PATH+"model_0_.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
 
 # Create a callback that saves the model's weights
