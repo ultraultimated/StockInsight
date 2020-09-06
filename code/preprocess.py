@@ -12,8 +12,8 @@ def transform_data(filename):
     ## 60 timesteps and 1 output
     X_train = []
     y_train = []
-    for i in range(60, len(training_set_scaled)):
-        X_train.append(training_set_scaled[i-60: i, 0])
+    for i in range(2, len(training_set_scaled)):
+        X_train.append(training_set_scaled[i-2: i, 0])
         y_train.append(training_set_scaled[i, 0])
 
     X_train, y_train = np.array(X_train), np.array(y_train)
