@@ -1,2 +1,0 @@
-# StockInsight
-## Stock price prediction
