@@ -2,18 +2,24 @@ from models import build_model
 from preprocess import transform_data
 import os
 import tensorflow as tf
-DATA_PATH = '../Data/AAPL.csv'
+from keras.callbacks import Callback, ModelCheckpoint, EarlyStopping
+
+DATA_PATH = '../Data/NKE.csv'
+TEST_PATH = '../Data/NKE_Test.csv'
 MODEL_PATH = '../model/'
-Xtrain, ytrain = transform_data(DATA_PATH)
+X_train, X_test, Y_train, Y_test = transform_data(DATA_PATH, TEST_PATH)
 
-md = build_model()
 
-checkpoint_path = MODEL_PATH+"model_0_.ckpt"
-checkpoint_dir = os.path.dirname(checkpoint_path)
+model = build_model(X_train)
 
-# Create a callback that saves the model's weights
-cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
-                                                 save_weights_only=True,
-                                                 verbose=1)
 
-md.fit(x = Xtrain, y = ytrain, batch_size = 32, epochs = 2, callbacks=[cp_callback])
+callbacks_list = [ModelCheckpoint(filepath='NKE_Model/ctpn.{epoch:03d}.h5',
+                                 monitor='val_loss',
+                                 verbose=1,
+                                 save_best_only=True,
+                                 save_weights_only=True),EarlyStopping(monitor='val_loss', patience=2, verbose=0)]
+
+
+model.fit(X_train,Y_train,validation_data=(X_test,Y_test),epochs=100,batch_size=64,verbose=1,callbacks=callbacks_list)
+
+
