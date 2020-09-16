@@ -1,0 +1,5 @@
+#
+# To update, run
+# 	pip-compile
+
+pytest==5.4.3
