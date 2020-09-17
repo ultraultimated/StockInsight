@@ -22,6 +22,7 @@ from tweepy import API, Stream, OAuthHandler, TweepError
 nlp = en_core_web_lg.load()
 from nltk.corpus import stopwords
 import datetime
+import elk
 
 
 # Setup twitter Authentication using tweepy
@@ -202,15 +203,48 @@ if __name__ == "__main__":
     news_list = filter_yahoo_news(filter_time, ticker_name)
     sentences_news = remove_stopwords(news_list)
     news_json = create_json_list(sentences_news)
+    
+    ####
+    data = None
+    try:
+        f = open("news.json")
+        data = json.load(f)
+        if len(data)>=7:
+            del data[0]
+    except:
+        data = []
+    
+    dic = {datetime.datetime.today().strftime('%Y-%m-%d') :news_json }
+    data.append(dic)
     with open('news.json', 'w') as fout:
-        json.dump(news_json, fout)
+        json.dump(data, fout)
+    
+    ### send news.json to elasticsearch            
+    f=open('news.json')
+    elk.create_index(f,"news")   
+    
 
     # tweets in json
     keyword_list = tfidf_word_highlight(sentences_news)
     tweet_sentences = get_tweets(stock_name, 15, keyword_list)
 
     tweets_json = create_json_list(tweet_sentences)
+    data = None
+    try:
+        f = open("tweets.json")
+        data = json.load(f)
+        if len(data)>=7:
+            del data[0]
+    except:
+        data = []
+
+    dic = {datetime.datetime.today().strftime('%Y-%m-%d') :tweets_json }
+    data.append(dic)
     with open('tweets.json', 'w') as fout:
-        json.dump(tweets_json, fout)
+        json.dump(data, fout)
+
+    ### send tweets.json to elasticsearch
+    f=open('tweets.json')
+    elk.create_index(f,"tweets")
 
 
