@@ -4,7 +4,7 @@ StockInsight predicts the stock prices using Neural Networks. It uses Elasticsea
 # Click on the image below to see the video
 [![Watch the video](https://img.youtube.com/vi/Fc5fHP2nowA/hqdefault.jpg)](https://youtu.be/Fc5fHP2nowA)
 # About
-StockInsight uses Long Short Term Memory to predict the stock price of a stock. StockInsight uses Elasticsearch to store Twitter data. StockInsight analyzes the emotions of what the author writes and does sentiment analysis on the text to determine how the author "feels" about a stock. StockInsight uses tf-idf to find filter out important keywords from the news headlines, it then makes a search on Twitter based on important keywords found in news articles. StockInsight uses Kibana for data visualization and exploration. It also uses Kafka for the simulation of the ra=eal time stock data.
+StockInsight uses Long Short Term Memory to predict the stock price of a stock. StockInsight uses Elasticsearch to store Twitter data. StockInsight analyzes the emotions of what the author writes and does sentiment analysis on the text to determine how the author "feels" about a stock. StockInsight uses tf-idf to filter out important keywords from the news headlines, it then makes a search on Twitter based on important keywords found in news articles. StockInsight uses Kibana for data visualization and exploration. It also uses Kafka for the simulation of the real time stock data.
 
 # Requirements
 * Elasticsearch 7.x
