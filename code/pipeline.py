@@ -192,6 +192,31 @@ def get_tweets(stock_name, minutes, keyword_list):
             tweet_sentences.append(i._json["text"])
     return tweet_sentences
 
+def send_data(file_name, index_name, lst_json):
+    '''
+    Function to send data to elasticsearch
+    INPUT: file pointer, index name in elasticsearch, json data to send
+    OUTPUT: None
+    '''
+    data = None
+    try:
+        f = open(file_name)
+        data = json.load(f)
+        if len(data)>=7:
+            del data[0]
+    except:
+        data = []
+    
+    dic = {datetime.datetime.today().strftime('%Y-%m-%d') :lst_json }
+    data.append(dic)
+    with open(file_name, 'w') as fout:
+        json.dump(data, fout)
+    
+    ### send news.json to elasticsearch            
+    f=open(file_name)
+    elk.create_index(f,index_name)   
+    
+
 if __name__ == "__main__":
     # Ticker name for which the data is used
     # In the future you might want to loop over different tickers
@@ -204,47 +229,14 @@ if __name__ == "__main__":
     sentences_news = remove_stopwords(news_list)
     news_json = create_json_list(sentences_news)
     
-    ####
-    data = None
-    try:
-        f = open("news.json")
-        data = json.load(f)
-        if len(data)>=7:
-            del data[0]
-    except:
-        data = []
+    ### send data to elasticsearch
+    send_data("news.json", "news", news_json)
     
-    dic = {datetime.datetime.today().strftime('%Y-%m-%d') :news_json }
-    data.append(dic)
-    with open('news.json', 'w') as fout:
-        json.dump(data, fout)
-    
-    ### send news.json to elasticsearch            
-    f=open('news.json')
-    elk.create_index(f,"news")   
-    
-
     # tweets in json
     keyword_list = tfidf_word_highlight(sentences_news)
     tweet_sentences = get_tweets(stock_name, 15, keyword_list)
-
     tweets_json = create_json_list(tweet_sentences)
-    data = None
-    try:
-        f = open("tweets.json")
-        data = json.load(f)
-        if len(data)>=7:
-            del data[0]
-    except:
-        data = []
-
-    dic = {datetime.datetime.today().strftime('%Y-%m-%d') :tweets_json }
-    data.append(dic)
-    with open('tweets.json', 'w') as fout:
-        json.dump(data, fout)
-
-    ### send tweets.json to elasticsearch
-    f=open('tweets.json')
-    elk.create_index(f,"tweets")
-
-
+    
+    ### send tweets to elasticsearch
+    send_data("tweets.json", "tweets", tweets_json)
+ 
