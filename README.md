@@ -2,6 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/ultraultimated/StockInsight)](https://github.com/ultraultimated/StockInsight/issues)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ultraultimated/StockInsight)
 ![GitHub contributors](https://img.shields.io/github/contributors/ultraultimated/StockInsight)
+[![DOI](https://zenodo.org/badge/291098939.svg)](https://zenodo.org/badge/latestdoi/291098939)
 
 # StockInsight
 StockInsight predicts the stock prices using Neural Networks. It uses Elasticsearch, Twitter data, News Headlines and sentiment analysis to find the effect of emotions on the stock price. How much do emotions on twitter and news headlines affect stock price? What could be the price of stock within next 30 minutes? Let's find out...
