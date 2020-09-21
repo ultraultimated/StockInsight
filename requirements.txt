@@ -3,3 +3,9 @@
 # 	pip-compile
 
 pytest==5.4.3
+tweepy
+elasticsearch
+spacy
+nltk
+numpy
+sklearn
