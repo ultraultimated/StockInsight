@@ -9,3 +9,6 @@ spacy
 nltk
 numpy
 sklearn
+pandas
+tensorflow
+alpha_vantage
