@@ -23,9 +23,9 @@ StockInsight uses Long Short Term Memory to predict the stock price of a stock. 
 * Elasticsearch python module
 * vaderSentiment analyzer
 * Twitter Developer account(Account creation is Free) you can find steps [here](https://www.extly.com/docs/autotweetng_joocial/tutorials/how-to-auto-post-from-joomla-to-twitter/apply-for-a-twitter-developer-account/#apply-for-a-developer-account).
-* Yahoo finance API account(Account creation is Free) You can find link here.	* Yahoo finance API account(Account creation is Free) You can find link [here](
+* Yahoo finance API account(Account creation is Free) You can find link [here](
 https://rapidapi.com/blog/how-to-use-the-yahoo-finance-api/).
-* requests python module	* requests python module
+* requests python module
 
 # Installing Kafka
 * To install kafka in ubuntu follow the steps [here](https://linuxhint.com/install-apache-kafka-ubuntu/)
