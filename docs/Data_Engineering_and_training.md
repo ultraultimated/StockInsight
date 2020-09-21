@@ -30,7 +30,7 @@ The alphavantage API fetches stock data which consists of following columns:
 The stock data consists of data from 14th August - 17th Septemeber. The dataset consists of per minute stock data for each stocks. 
 We have csv file for each stocks which is updated everyday by running the data_extraction.py file.
 
-Please find the stock dataset at 
+Please find the stock dataset at https://drive.google.com/drive/folders/1fkp5XYjyWimBMYJoUUcQ2ozhq7RI4Vku?usp=sharing
 
 ## Data Preprocessing
 Following steps are performed during the preprocessing stage:
@@ -55,7 +55,14 @@ LSTM Specifications:
 We keep a model checkpoint to save the weights and monitor the validation loss. If the validation loss doesn't decrease it would stop training.
 
 ## Predictions
- 
+
+The data was is divided into training and validation set. The training dataset consists of 80% of total data whereas validation data is 20%.
+
+The validation results for the models are as follows:
+| Stock | MAE |
+| --- | --- |
+| NKE (Nike) | 0.276  |
+| EXPE (Expedia) | 0.347 |
 
 
 
