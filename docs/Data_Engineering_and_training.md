@@ -30,8 +30,6 @@ The alphavantage API fetches stock data which consists of following columns:
 The stock data consists of data from 14th August - 17th Septemeber. The dataset consists of per minute stock data for each stocks. 
 We have csv file for each stocks which is updated everyday by running the data_extraction.py file.
 
-Please find the stock dataset at https://drive.google.com/drive/folders/1fkp5XYjyWimBMYJoUUcQ2ozhq7RI4Vku?usp=sharing
-
 ## Data Preprocessing
 Following steps are performed during the preprocessing stage:
 1) Stock prices are predicted only based on the closing price.
