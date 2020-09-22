@@ -10,6 +10,8 @@ The script is executed everyday at midnight since live streaming of stock data r
 Alphavantage API allows only 5 request (stocks) per minute and thus it requires few minutes to fetch data for all the stocks.
 To know more about the API, visit https://www.alphavantage.co/documentation/
 
+Get alpha vantage API by creating an account on https://www.alphavantage.co/
+
 Since live stock price is not acheivable, to simulate the real time data we consider the previous day data as today's data. Since yesterday's training data is considered as live data, the historical data folder will contain all the datapoints before the previous day whereas simulation data folder consist of previous day's data.
 
 Update the script by changing the date for which you want to fetch data and the list of stocks for which you want to fetch the data.
