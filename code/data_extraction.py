@@ -14,7 +14,7 @@ def fetch_stock_data(stocks):
         time=TimeSeries(key="Enter alphavantage key",output_format='pandas')
         data=time.get_intraday(symbol=stock,interval='1min',outputsize="full")
         stock_df=data[0]
-        stock_df.to_csv("Data/Historical_Data/"+stock+".csv")
+        stock_df.to_csv("../data/Historical_Data/"+stock+".csv")
         
         ## API can only fetch data for 5 stocks in a minute 
         cnt+=1
@@ -33,7 +33,7 @@ def stock_data_daily(stocks,date):
     """
 	cnt=0
 	for stock in stocks:
-		df=pd.read_csv("Data/Historical_Data/"+stock+".csv",index_col=0)
+		df=pd.read_csv("../data/Historical_Data/"+stock+".csv",index_col=0)
 		df=df.sort_index()
 		time=TimeSeries(key="Enter alphavantage key",output_format='pandas')
 		data=time.get_intraday(symbol=stock,interval='1min',outputsize="full")
@@ -42,8 +42,8 @@ def stock_data_daily(stocks,date):
 		final_df=pd.concat([df,stock_df])
 		
 		##Comment the below line when updating simulation data
-		final_df.to_csv("Data/Historical_Data/"+stock+".csv")
-		stock_df.to_csv("Data/Simulation_Data/"+stock+".csv")
+		final_df.to_csv("../data/Historical_Data/"+stock+".csv")
+		stock_df.to_csv("../data/Simulation_Data/"+stock+".csv")
 		
 		## API can only fetch data for 5 stocks in a minute 
 		cnt+=1

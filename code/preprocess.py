@@ -31,7 +31,6 @@ def read_data(filename):
     filename: csv file to read
     """
     df = pd.read_csv(filename)
-    df = df.rename(columns={'1. open':'open','2. high':'high','3. low':'low','4. close':'close','5. volume':'volume'})
     return df
 
 
