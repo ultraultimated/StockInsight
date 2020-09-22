@@ -39,11 +39,19 @@ def stock_data_daily(stocks,date):
 		data=time.get_intraday(symbol=stock,interval='1min',outputsize="full")
 		stock_df=data[0].loc[date]
 		stock_df=stock_df.sort_index()
-		final_df=pd.concat([df,stock_df])
+		stock_df=stock_df.reset_index()
+		stock_df=stock_df.rename(columns={'1. open':'open','2. high':'high','3. low':'low','4. close':'close','5. volume':'volume'})
+		stock_df['date'] = pd.to_datetime(stock_df['date'])
+		stock_df=stock_df[stock_df.date.dt.strftime('%H:%M:%S').between('09:30','16:00')]
+		stock_df = stock_df.reset_index(drop = True)
+		final_df=pd.concat([df,stock_df],axis=0)
 		
+
 		##Comment the below line when updating simulation data
-		final_df.to_csv("../data/Historical_Data/"+stock+".csv")
-		stock_df.to_csv("../data/Simulation_Data/"+stock+".csv")
+		final_df.to_csv("../data/Historical_Data/"+stock+".csv",index=False)
+		##Comment the below line when updating historical data
+		#stock_df.to_csv("../data/Simulation_Data/"+stock+".csv",index=False)
+		
 		
 		## API can only fetch data for 5 stocks in a minute 
 		cnt+=1
@@ -60,9 +68,7 @@ def main():
 	"""
 
 	stocks=["NKE","EXPE"]
-	#fetch_stock_data(stocks)
-	#stocks=["NKE"]
-	present_day='2020-09-15'
+	present_day='2020-09-18'
 
 	stock_data_daily(stocks,present_day)
 	
