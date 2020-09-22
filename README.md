@@ -36,3 +36,22 @@ https://rapidapi.com/blog/how-to-use-the-yahoo-finance-api/).
 # Installing ELK
 * To install ELK in ubuntu follow the steps [here](https://logz.io/learn/complete-guide-elk-stack/#installing-elk)
 * To install ELK in windows follow the steps [here](https://logz.io/blog/installing-the-elk-stack-on-windows/)
+
+# How to train the LSTM Model
+```
+cd code
+python train.py
+```
+
+# How to see predictions
+Start Kafka depending on the installation location
+Start app in one folder using:
+```
+cd code
+python app.py
+```
+Start predictor in different terminal
+```
+cd code
+python predictor.py
+```
