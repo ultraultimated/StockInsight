@@ -1,8 +1,8 @@
 # Twitter developer account
-A really good and complete explanation to create twiteer developer account can be found here
+A really good and complete explanation to create twiteer developer account can be found [here](https://www.extly.com/docs/autotweetng_joocial/tutorials/how-to-auto-post-from-joomla-to-twitter/apply-for-a-twitter-developer-account/#apply-for-a-developer-account)
 
 # Yahoo rapid api account
-The steps to create a yahoo rapid api account can be found here
+The steps to create a yahoo rapid api account can be found [here](https://rapidapi.com/blog/how-to-use-the-yahoo-finance-api/)
 
 # Prerequisites
 ```
