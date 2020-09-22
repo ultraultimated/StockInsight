@@ -1,3 +1,4 @@
+Total score: 125 / 49 = 2.55
 
 <br clear=all>
 
