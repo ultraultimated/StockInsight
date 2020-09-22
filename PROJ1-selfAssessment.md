@@ -1,4 +1,4 @@
-Total score: 125 / 49 = 2.55
+Total score: 119 / 49 = 2.42
 
 <br clear=all>
 
@@ -20,7 +20,7 @@ Total score: 125 / 49 = 2.55
 || DOI badge: exists | 4|
 ||Docs: doco generated , format not ugly | 2|
 ||Docs: what: point descriptions of each class/function (in isolation) | 2|
-||Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 2|
+||Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 0|
 ||Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 3|
 ||Docs: 3 minute video, posted to YouTube. That convinces people why they want to work on your code.| 4|
 || (hard) code conforms to some known patterns | 2
@@ -30,16 +30,16 @@ Total score: 125 / 49 = 2.55
 || Repo does not have "ignore" files.| 2|
 ||Use of  style checkers | 0|
 ||Extensive Use of  style checkers | 0|
-|| Use of code  formatters. | 0|
+|| Use of code  formatters. | 2|
 || Extensive Use of code  formatters. | 0|
-|| Use of syntax checkers. | 2|
-|| Extensive use of syntax checkers. | 2|
+|| Use of syntax checkers. | 0|
+|| Extensive use of syntax checkers. | 0|
 || Use of code coverage | 0|
 || Extensive use of code coverage |0|
 || other automated analysis tools|0|
 || Extensive use of  other automated analysis tools|0|
-|| test cases exist|1|
-|| test cases are routinely executed|1|
+|| test cases exist|0|
+|| test cases are routinely executed|0|
 | consensus-oriented model| the files CONTRIBUTING.md and CODEOFCONDUCT.md has have multiple edits by multiple people| 2|
 | | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 4|
 | | multiple people contribute to discussions| 4|
