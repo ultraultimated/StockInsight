@@ -16,11 +16,11 @@ from keras.models import model_from_json
 KAFKA_HOST = 'localhost:9092'
 TOPICS = ['app_messages', 'retrain_topic']
 PATH = Path('../')
-MODELS_PATH = PATH/'model/LSTM'
+MODELS_PATH = PATH/'model/Nike_Model'
 MESSAGES_PATH = PATH/'messages'
 RETRAIN_EVERY = 25
 EXTRA_MODELS_TO_KEEP = 1
-TRAIN_DATA = PATH/'Data/NKE.csv'
+TRAIN_DATA = PATH/'data/Historical_Data/NKE.csv'
 consumer = None
 model = None
 

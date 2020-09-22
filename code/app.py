@@ -7,11 +7,11 @@ from pathlib import Path
 from kafka import KafkaProducer, KafkaConsumer
 from time import sleep
 
-PATH = Path('../Data/')
+PATH = Path('../data/Simulation_Data')
 KAFKA_HOST = 'localhost:9092'
 
 # load the data that is captured real time
-df_real = pd.read_csv(PATH/'NKE_test.csv')
+df_real = pd.read_csv(PATH/'NKE.csv')
 
 df_real['json'] = df_real.apply(lambda x: x.to_json(), axis = 1)
 
@@ -31,7 +31,7 @@ def start_producing():
         producer.send('app_messages', json.dumps(message).encode('utf-8'))
         producer.flush()
         print("+++ PRODUCER: Sent message with id {}".format(message_id))
-        sleep(60)
+        sleep(2)
 
 
 def start_consuming():
