@@ -37,21 +37,33 @@ https://rapidapi.com/blog/how-to-use-the-yahoo-finance-api/).
 * To install ELK in ubuntu follow the steps [here](https://logz.io/learn/complete-guide-elk-stack/#installing-elk)
 * To install ELK in windows follow the steps [here](https://logz.io/blog/installing-the-elk-stack-on-windows/)
 
+# How to see predictions
+Start Kafka depending on the installation location:
+```
+> /opt/Kafka/kafka_2.13-2.6.0/bin/zookeeper-server-start.sh /opt/Kafka/kafka_2.13-2.6.0/config/zookeeper.properties 
+
+```
+
+Start predictor in Terminal #2:
+```
+cd code
+python predictor.py
+```
+
+Start app in Terminal #3:
+```
+> cd code
+> python app.py
+```
+
+Start the pipeline for ELK in Terminal #4:
+```
+> cd code
+> python pipeline.py
+```
+
 # How to train the LSTM Model
 ```
 cd code
 python train.py
-```
-
-# How to see predictions
-Start Kafka depending on the installation location
-Start app in one folder using:
-```
-cd code
-python app.py
-```
-Start predictor in different terminal
-```
-cd code
-python predictor.py
 ```
