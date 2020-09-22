@@ -9,11 +9,11 @@ from time import sleep
 from pytz import timezone
 import datetime
 
-PATH = Path('../Data/')
+PATH = Path('../data/Simulation_Data')
 KAFKA_HOST = 'localhost:9092'
 
 # load the data that is captured real time
-df_real = pd.read_csv(PATH/'NKE_test.csv')
+df_real = pd.read_csv(PATH/'NKE.csv')
 
 df_real['json'] = df_real.apply(lambda x: x.to_json(), axis = 1)
 
