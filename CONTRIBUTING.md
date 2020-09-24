@@ -2,12 +2,12 @@
 
 Thank you for taking the time to contribute! :smile:
 
-The following is a set of guidelines to follow while contributing to this [repo](https://github.com/ultraultimated/CSC510_HW1).
+The following is a set of guidelines to follow while contributing to this [repo](https://github.com/ultraultimated/StockInsight).
 Feel free to propose changes via pull request.
 
 
 ## Code of Conduct
-This project and everyone participating in it is governed by the [CSC510_HW1 Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to follow the code of conduct. 
+This project and everyone participating in it is governed by the [StockInsight](CODE_OF_CONDUCT.md). By participating, you agree to follow the code of conduct. 
 
 
 ## Getting Started
